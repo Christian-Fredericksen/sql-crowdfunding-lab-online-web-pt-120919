@@ -19,7 +19,7 @@ def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_
   FROM users
   INNER JOIN pledges
   ON users.id = pledges.user_id
-  GROUP BY users.name;"
+  GROUP BY users.name"
 end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
@@ -47,14 +47,13 @@ def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_ca
   FROM projects
   INNER JOIN pledges
   ON projects.id = pledges.project_id
-  WHERE category = 'music';"
+  WHERE category = 'music'"
 end
 
 def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_books_category
   "SELECT projects.category, SUM(pledges.amount)
-  AS total_pledges
   FROM projects
   INNER JOIN pledges
   ON projects.id = pledges.project_id
-  WHERE category = 'books';"
+  WHERE category = 'books'"
 end
